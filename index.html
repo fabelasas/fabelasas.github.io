@@ -1,0 +1,1707 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Los Tres Ases - Tus sueños hechos realidad con rifas profesionales, premios y afiliaciones.">
+  <title>Los Tres Ases</title>
+  <link rel="icon" href="/ruta-al-favicon.ico" type="image/x-icon">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #ffffff;
+      color: #111;
+      overflow-x: hidden;
+    }
+    header {
+      position: relative;
+      height: 100vh;
+      background-color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      overflow: hidden;
+    }
+    .logo {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      max-width: 100px;
+      z-index: 15;
+    }
+    .intro {
+      text-align: center;
+      z-index: 10;
+    }
+    .intro h1 {
+      font-size: 2.5rem;
+      color: #c8232c;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 3px solid #c8232c;
+      width: 0;
+      animation: typing 3.5s steps(40, end) forwards, blink .75s step-end infinite;
+    }
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+    @keyframes blink {
+      50% { border-color: transparent }
+    }
+    .intro p {
+      font-size: 1.2rem;
+      color: #111;
+      margin-top: 1rem;
+    }
+    .cta-button {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 1rem 2rem;
+      font-size: 1rem;
+      color: #fff;
+      background: linear-gradient(135deg, #111, #c8232c);
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+    }
+    .cta-button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    }
+
+    .animated-cards {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 0;
+    }
+    .card {
+      position: absolute;
+      width: 80px;
+      height: 120px;
+      background-color: white;
+      border: 2px solid #000000;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      color: #c8232c;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      animation: floatCards 8s infinite ease-in-out;
+    }
+    .card:nth-child(1) { top: 20%; left: -80px; animation-delay: 0s; content: "♣"; }
+    .card:nth-child(2) { top: 50%; left: -100px; animation-delay: 2s; content: "♥"; }
+    .card:nth-child(3) { top: 75%; left: -60px; animation-delay: 4s; content: "♦"; }
+
+    .card::before {
+      content: attr(data-symbol);
+      font-size: 2.5rem;
+    }
+
+    @keyframes floatCards {
+      0% { transform: translateX(0) rotate(0deg); opacity: 0; }
+      25% { opacity: 1; }
+      50% { transform: translateX(110vw) rotate(360deg); opacity: 0.8; }
+      100% { transform: translateX(110vw) rotate(720deg); opacity: 0; }
+    }
+
+    @media screen and (max-width: 768px) {
+      .intro h1 { font-size: 2rem; }
+      .intro p { font-size: 1rem; }
+      .logo { max-width: 190px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="imga/Logo-Tres-Ases.png" alt="Logo Los Tres Ases" class="logo" />
+    <div class="intro">
+      <h1>¡Tu suerte comienza aquí!</h1>
+      <p>"Donde cada rifa representa una oportunidad real de ganar en grande, respaldada por confianza, legalidad y total transparencia."
+
+      </p>
+      <a href="https://wa.me/573216435009?text=Hola%20Los%20Tres%20Ases%2C%20quiero%20saber%20más" target="_blank" rel="noopener noreferrer">
+        <button class="cta-button">Compra y gana ahora</button>
+      </a>
+    </div>
+    <div class="animated-cards">
+      <div class="card" data-symbol="♣"></div>
+      <div class="card" data-symbol="♥"></div>
+      <div class="card" data-symbol="♦"></div>
+    </div>
+
+    
+  </header>
+
+  <style>
+    :root {
+      --payment-bg: #010101;
+      --payment-accent: #D61C1C;
+      --payment-accent2: #004A99;
+      --susuerte-yellow: #FFD500;
+    }
+
+    .payment-portal {
+      background: var(--payment-bg);
+      padding: 60px 20px;
+      color: #fff;
+    }
+
+    .payment-portal .section-title {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .payment-portal .section-title h2 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      color: var(--payment-accent);
+    }
+
+    .payment-portal .section-title p {
+      font-size: 1.1rem;
+      color: #ddd;
+    }
+
+    .payment-video {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .payment-video video {
+      width: 100%;
+      max-width: 900px;
+      /* contenedor más amplio */
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .payment-carousel-wrapper {
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 40px;
+      padding: 0 60px;
+      /* deja espacio para flechas */
+    }
+
+    .payment-carousel {
+      display: flex;
+      transition: transform 0.6s ease;
+    }
+
+    .payment-item {
+      min-width: 100%;
+      position: relative;
+      text-align: center;
+    }
+
+    .payment-item img {
+      width: auto;
+      max-width: 240px;
+      /* imagen más grande */
+      transition: transform 0.3s ease;
+    }
+
+    .payment-item:hover img {
+      transform: scale(1.1);
+    }
+
+    .download-icon {
+      position: absolute;
+      bottom: 20%;
+      right: 20%;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 10px;
+      /* icono más grande */
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    .download-icon i {
+      color: #fff;
+      font-size: 2rem;
+      /* icono más grande */
+    }
+
+    .download-icon:hover {
+      background: var(--payment-accent2);
+    }
+
+    .payment-prev,
+    .payment-next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.5);
+      border: none;
+      color: #fff;
+      font-size: 2.5rem;
+      /* flechas más grandes */
+      padding: 8px 12px;
+      cursor: pointer;
+      z-index: 10;
+      border-radius: 6px;
+    }
+
+    .payment-prev {
+      left: 10px;
+    }
+
+    .payment-next {
+      right: 10px;
+    }
+
+    .payment-prev:hover,
+    .payment-next:hover {
+      background: var(--payment-accent);
+    }
+
+    .susuerte-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .susuerte-btn {
+      background-color: var(--susuerte-yellow);
+      color: #010101;
+      padding: 12px 24px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      transition: background 0.3s;
+    }
+
+    .susuerte-btn i {
+      color: var(--payment-accent2);
+      font-size: 1.5rem;
+      margin-right: 8px;
+    }
+
+    .susuerte-btn:hover {
+      background-color: #e6c500;
+    }
+
+    @media (max-width: 768px) {
+      .payment-portal .section-title h2 {
+        font-size: 1.8rem;
+      }
+
+      .payment-item img {
+        max-width: 180px;
+      }
+
+      .download-icon {
+        bottom: 15%;
+        right: 15%;
+      }
+
+      .payment-prev,
+      .payment-next {
+        font-size: 2rem;
+      }
+
+      .payment-carousel-wrapper {
+        padding: 0 30px;
+      }
+    }
+  </style>
+
+  <section class="payment-portal">
+    <div class="container">
+      <!-- Título y descripción -->
+      <div class="section-title">
+        <h2>Sueña. Juega. Gana. Repite.</h2>
+        <p>La mejor forma de ganar: rifas confiables, premios reales y todo al alcance de tu mano con <a href="https://movilgo.com.co/" target="_blank" rel="noopener noreferrer">Movilgo</a>.</p>
+
+      </div>
+
+      <!-- Video instructivo -->
+      <div class="payment-video">
+        <video controls src="Vide/video-bono.mp4"></video>
+      </div>
+
+      <!-- Carrusel de rifas -->
+      <div class="payment-carousel-wrapper">
+        <div class="payment-carousel" id="paymentCarousel">
+          <!-- Alto valor -->
+          <div class="payment-item">
+            <img src="images/nequi-pago.jpg" alt="Rif alto valor">
+            <a href="images/nequi-qr.png" download="nequi-qr.png" class="download-icon">
+              <i class="fa fa-download"></i>
+            </a>
+          </div>
+          <!-- Valor no tan alto -->
+          <div class="payment-item">
+            <img src="images/Bancolombia-Pago.png" alt="Rifa valor bajo">
+            <a href="images/QR.jpeg" download="bancolombia-qr.png" class="download-icon">
+              <i class="fa fa-download"></i>
+            </a>
+          </div>
+          
+          
+        </div>
+        <button class="payment-prev" onclick="movePaymentSlide(-1)">&#10094;</button>
+        <button class="payment-next" onclick="movePaymentSlide(1)">&#10095;</button>
+      </div>
+
+    </div>
+  </section>
+
+  <script>
+    // Carrusel
+    const carousel = document.getElementById('paymentCarousel');
+    const items = carousel.querySelectorAll('.payment-item');
+    let current = 0, total = items.length;
+    function movePaymentSlide(dir) {
+      current = (current + dir + total) % total;
+      carousel.style.transform = `translateX(-${current * 100}%)`;
+    }
+    setInterval(() => movePaymentSlide(1), 4000);
+
+    // Popup Susuerte
+    document.getElementById('btnSusuerte').addEventListener('click', () => {
+      const width = 800, height = 600;
+      const left = (window.innerWidth - width) / 2;
+      const top = (window.innerHeight - height) / 2;
+      window.open(
+        'https://servicios.susuerte.com/registro',
+        'Susuerte',
+        `width=${width},height=${height},top=${top},left=${left}`
+      );
+    });
+  </script>
+  
+<!-- Sección Cuenta Regresiva con Esferas Redondas -->
+<section class="countdown-section">
+
+  
+  <div class="container">
+    <h2 class="countdown-title">Lo que falta para que seas el próximo ganador</h2>
+    
+    <div class="countdown-wrapper">
+      <div class="countdown-item" id="days">
+        <span class="number">00</span>
+        <span class="label">Días</span>
+      </div>
+      <div class="countdown-item" id="hours">
+        <span class="number">00</span>
+        <span class="label">Horas</span>
+      </div>
+      <div class="countdown-item" id="minutes">
+        <span class="number">00</span>
+        <span class="label">Minutos</span>
+      </div>
+      <div class="countdown-item" id="seconds">
+        <span class="number">00</span>
+        <span class="label">Segundos</span>
+      </div>
+      
+    </div>
+  </div>
+  <div class="fireworks">
+    <div class="explosion"></div>
+    <div class="explosion"></div>
+    <div class="explosion"></div>
+  </div>
+</section>
+
+<style>
+  .countdown-section {
+    background-color: #111;
+    padding: 80px 20px;
+    text-align: center;
+    color: #fff;
+  }
+
+  .fireworks {
+  position: relative;
+  height: 0;
+  margin-bottom: 40px;
+}
+
+.explosion {
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  background: radial-gradient(circle, #ff2e2e 30%, transparent 70%);
+  border-radius: 50%;
+  animation: explode 2s infinite ease-in-out;
+}
+
+.explosion:nth-child(2) {
+  top: -80px;
+  left: 30%;
+  animation-delay: 1s;
+}
+
+.explosion:nth-child(3) {
+  top: -100px;
+  left: 70%;
+  animation-delay: 1.5s;
+}
+
+@keyframes explode {
+  0% {
+    transform: scale(0.5);
+    opacity: 0.9;
+    box-shadow: 0 0 10px #ff2e2e;
+  }
+  30% {
+    transform: scale(2.5);
+    opacity: 1;
+    box-shadow: 0 0 25px #ff2e2e;
+  }
+  70% {
+    transform: scale(1);
+    opacity: 0.4;
+    box-shadow: 0 0 5px #ff2e2e;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+
+  .countdown-title {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: #ff2e2e;
+    font-weight: bold;
+  }
+
+  .countdown-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+
+  .countdown-item {
+    background: radial-gradient(circle, #1a1a1a 60%, #000);
+    border: 3px solid #ff2e2e;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 20px rgba(255, 46, 46, 0.4);
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .countdown-item.pulse {
+    animation: pulse 0.4s ease-in-out;
+  }
+
+  .number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #fff;
+  }
+
+  .label {
+    font-size: 1rem;
+    margin-top: 8px;
+    color: #ff2e2e;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  @keyframes pulse {
+    0%   { transform: scale(1); }
+    50%  { transform: scale(1.15); }
+    100% { transform: scale(1); }
+  }
+
+  @media (max-width: 600px) {
+    .countdown-item {
+      width: 90px;
+      height: 90px;
+    }
+
+    .number {
+      font-size: 2rem;
+    }
+
+    .label {
+      font-size: 0.9rem;
+    }
+
+    .countdown-title {
+      font-size: 2rem;
+    }
+  }
+  
+</style>
+
+<script>
+  const endDate = new Date("July 2, 2025 00:00:00").getTime();
+
+  function updateCountdown() {
+    const now = new Date().getTime();
+    const distance = endDate - now;
+
+    if (distance < 0) {
+      document.querySelector('.countdown-wrapper').innerHTML = '<h3>¡Ya comenzó el sorteo!</h3>';
+      return;
+    }
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    updateElement("days", days);
+    updateElement("hours", hours);
+    updateElement("minutes", minutes);
+    updateElement("seconds", seconds);
+  }
+
+  function updateElement(id, value) {
+    const element = document.getElementById(id);
+    const number = element.querySelector(".number");
+
+    if (number.innerText !== value.toString().padStart(2, '0')) {
+      element.classList.remove("pulse");
+      void element.offsetWidth; // reflow trigger
+      element.classList.add("pulse");
+    }
+
+    number.innerText = value.toString().padStart(2, '0');
+  }
+
+  setInterval(updateCountdown, 1000);
+  updateCountdown();
+</script>
+
+  
+  <section class="ticket-section">
+    <div class="ticket-card">
+      <div class="ticket-header">
+        <h2><span style="color: #000;">Los</span> Tres <span style="color: #000;">Ases</span>. Confianza que se gana con los años</h2>
+      </div>
+      <div class="ticket-body">
+        <p>
+          Más de <strong>25 años</strong> de experiencia en rifas 100 % legales, nos hemos ganado la confianza de miles de colombianos. Con MovilGo, participa desde tu celular: compra números, paga al instante y vive la emoción. Encuentra en la app recargas, pines, apuestas deportivas, certificados de tradición y rifas de Los Tres Ases.
+
+        </p>
+        <p>
+          Gracias a nuestra alianza con <strong>Movilgo</strong>, puedes adquirir tus boletas desde la comodidad de tu celular. Sin filas, sin complicaciones.
+        </p>
+        <a href="https://wa.me/573216435009?text=Hola%20Los%20Tres%20Ases%2C%20quiero%20saber%20más" target="_blank" class="cta-button">¡Adquiere tu suerte ahora!</a>
+      </div>
+      <div class="ticket-footer">
+        <span>Rifa No. 50</span>
+        <span>Tu oportunidad es ahora</span>
+      </div>
+    </div>
+  </section>
+  
+  <style>
+  .ticket-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 1rem;
+    background: #f5f5f5;
+  }
+  
+  .ticket-card {
+    background: linear-gradient(135deg, #fff, #f1f1f1);
+    border: 2px dashed #c8232c;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+    padding: 2rem;
+    text-align: center;
+    position: relative;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  }
+  
+  .ticket-card::before, .ticket-card::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #f5f5f5;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+  }
+  
+  .ticket-card::before {
+    left: -10px;
+  }
+  
+  .ticket-card::after {
+    right: -10px;
+  }
+  
+  .ticket-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  }
+  
+  .ticket-header h2 {
+    color: #c8232c;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+  
+  .ticket-body p {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 1rem;
+  }
+  
+  .cta-button {
+    background-color: #c8232c;
+    color: #ffffff;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cta-button:hover {
+    background-color: #a71d24;
+  }
+  
+  .ticket-footer {
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    color: #777;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px dashed #ccc;
+    padding-top: 0.5rem;
+  }
+  
+  @media (max-width: 600px) {
+    .ticket-card {
+      padding: 1.5rem;
+    }
+    .ticket-header h2 {
+      font-size: 1.4rem;
+    }
+    .ticket-body p {
+      font-size: 0.95rem;
+    }
+  }
+  </style>
+
+<section id="innovacion-ases" class="balotas-innovacion" style="background-color: #111; padding: 60px 20px; color: white;">
+  <h2 class="balotas-title">Innovamos para que jugar sea seguro y fácil</h2>
+  <div class="balotas-grid">
+    <div class="balota-card"><div class="balota-inner"><div class="balota-front">♠</div><div class="balota-back">Seguridad</div></div></div>
+    <div class="balota-card"><div class="balota-inner"><div class="balota-front">♦</div><div class="balota-back">Organización</div></div></div>
+    <div class="balota-card"><div class="balota-inner"><div class="balota-front">♣</div><div class="balota-back">Certificación</div></div></div>
+    <div class="balota-card"><div class="balota-inner"><div class="balota-front">♥</div><div class="balota-back">Experiencia</div></div></div>
+  </div>
+  <div class="texto-innovador">
+    <p>En <span style="color: #000;">Los</span> <span style="color: #c8232c;">Tres</span> <span style="color: #000;">Ases</span>, reinventamos la manera de apostar: más sencilla, más precisa y completamente transparente. Porque innovar no es solo avanzar, es mejorar tu experiencia desde el primer número.</p>
+
+
+  </div>
+</section>
+
+<style>
+  .balotas-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: #f7f7f7;
+  }
+
+  .balotas-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .balota-card {
+    width: 100px;
+    height: 100px;
+    perspective: 1000px;
+    transform: scale(0.9);
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .balota-card.active {
+    transform: scale(1.1);
+  }
+
+  .balota-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transform-style: preserve-3d;
+    transition: transform 0.8s ease-in-out;
+  }
+
+  .balota-front, .balota-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    background-color: #c8232c;
+    color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  }
+
+  .balota-back {
+    background-color: #1e1e1e;
+    transform: rotateY(180deg);
+  }
+
+  .balota-card.active .balota-inner {
+    transform: rotateY(180deg);
+  }
+
+  .texto-innovador {
+    margin-top: 60px;
+    text-align: center;
+    opacity: 0;
+    filter: blur(8px);
+    transform: translateY(30px);
+    transition: opacity 1s ease, transform 1s ease, filter 1s ease;
+  }
+
+  .texto-innovador.visible {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+
+  .texto-innovador p {
+    font-size: 1.1rem;
+    color: #f0f0f0;
+    background: radial-gradient(circle at center, #c8232c 0%, #111 100%);
+    box-shadow: 0 0 25px rgba(200, 35, 44, 0.4);
+    max-width: 600px;
+    margin: auto;
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid #c8232c33;
+  }
+
+  @media screen and (max-width: 600px) {
+    .balota-card {
+      width: 80px;
+      height: 80px;
+    }
+
+    .balotas-title {
+      font-size: 1.5rem;
+    }
+
+    .texto-innovador p {
+      font-size: 1rem;
+    }
+  }
+</style>
+
+<script>
+  const cards = document.querySelectorAll('.balota-card');
+  const texto = document.querySelector('.texto-innovador');
+  let ejecutado = false;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !ejecutado) {
+        ejecutado = true;
+        let index = 0;
+
+        const intervalo = setInterval(() => {
+          cards.forEach(c => c.classList.remove('active'));
+          cards[index].classList.add('active');
+          index++;
+          if (index >= cards.length) {
+            clearInterval(intervalo);
+            setTimeout(() => texto.classList.add('visible'), 600);
+          }
+        }, 800);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  observer.observe(document.querySelector('#innovacion-ases'));
+</script>
+
+
+
+<!-- Sección de Automatización Redes tipo baraja conectada -->
+<section class="automatizacion-redes">
+  <h2 class="titulo-efecto">Reinventando la Forma de Apostar y Ganar</h2>
+  <p class="descripcion-efecto">Creamos una forma más justa y sencilla de participar en rifas, donde cada número suma emoción, transparencia y confianza.
+
+  <div class="network-cards">
+    <div class="card-node whatsapp">
+      <div class="icono">🔄</div>
+      <h3>Transición Inteligente</h3>
+      <p>Estamos realizando una transición de operaciones físicas a digitales, mejorando la accesibilidad y la experiencia del usuario con un proceso de compra y apuesta completamente en línea.</p>
+    </div>
+    <div class="card-node instagram">
+      <div class="icono">🤖</div>
+      <h3>Automatización</h3>
+      <p>Con nuestro aliado tecnológico <a href="https://crisinnov.github.io" style="color:blue;">CrisInnov</a>, hemos automatizado todo el proceso, desde las rifas hasta la gestión de pagos y comunicación, garantizando una experiencia sin interrupciones.</p>
+    </div>
+    <div class="card-node facebook">
+      <div class="icono">🖥️</div>
+      <h3>Mejora de Infraestructura</h3>
+      <p>Junto a <a href="https://crisinnov.github.io/devroxportafolio.github.io/" style="color:blue;">Devrox</a>, optimizamos nuestra infraestructura tecnológica, asegurando la escalabilidad y seguridad de las operaciones a través de servidores y sistemas de alta disponibilidad.</p>
+    </div>
+    <div class="card-node email">
+      <div class="icono">📜</div>
+      <h3>Certificación y Cumplimiento</h3>
+      <p>Cumplimos con las nuevas normativas de Coljuegos mediante un proceso de transición tecnológica, asegurando que todas las rifas sean seguras, transparentes y legales según la legislación vigente.</p>
+    </div>
+  </div>
+</section>
+
+<style>
+.automatizacion-redes {
+  padding: 80px 20px;
+  background: radial-gradient(circle at center, #1c1c1c, #000);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.titulo-efecto {
+  font-size: 2.8rem;
+  color: #c8232c;
+  margin-bottom: 10px;
+  animation: pulsar 2s infinite ease-in-out;
+}
+
+.descripcion-efecto {
+  color: #eee;
+  font-size: 1.2rem;
+  margin-bottom: 60px;
+  animation: fadeIn 2s ease;
+}
+
+.network-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  position: relative;
+}
+
+.card-node {
+  background: white;
+  border: 2px solid #c8232c;
+  border-radius: 20px;
+  padding: 30px;
+  width: 250px;
+  height: 280px;
+  color: #111;
+  box-shadow: 0 0 20px rgba(200, 35, 44, 0.4);
+  position: relative;
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
+  cursor: pointer;
+}
+
+.card-node:hover {
+  transform: scale(1.05) rotateY(10deg);
+  box-shadow: 0 0 40px rgba(255, 50, 50, 0.7);
+}
+
+.card-node .icono {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.card-node h3 {
+  color: #c8232c;
+  margin-bottom: 10px;
+}
+
+.card-node::before {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 50px;
+  background: #c8232c;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: growLine 2s ease-in-out forwards;
+}
+
+.card-node:nth-child(1)::before {
+  height: 0;
+  animation-delay: 0.2s;
+}
+.card-node:nth-child(2)::before {
+  height: 0;
+  animation-delay: 0.4s;
+}
+.card-node:nth-child(3)::before {
+  height: 0;
+  animation-delay: 0.6s;
+}
+.card-node:nth-child(4)::before {
+  height: 0;
+  animation-delay: 0.8s;
+}
+
+@keyframes growLine {
+  0% {
+    height: 0;
+    opacity: 0;
+  }
+  100% {
+    height: 50px;
+    opacity: 1;
+  }
+}
+
+@keyframes pulsar {
+  0%, 100% {
+    transform: scale(1);
+    text-shadow: 0 0 10px #c8232c, 0 0 20px #c8232c;
+  }
+  50% {
+    transform: scale(1.05);
+    text-shadow: 0 0 20px #ff4c4c, 0 0 40px #ff4c4c;
+  }
+}
+</style>
+
+
+<!-- Sistema de referidos -->
+
+<section id="sistema-referidos" style="background-color: #fff; padding: 100px 20px; position: relative; overflow: hidden; color: #000;">
+  <h2 style="text-align: center; font-size: 2.8rem; color: #000; font-weight: bold; margin-bottom: 30px;">
+    Maximiza Tus Ingresos con Nuestro Sistema de Comisiones Reales
+  </h2>
+
+  <p style="max-width: 900px; margin: 0 auto 20px auto; font-size: 1.2rem; text-align: center;">
+    En <strong>Los <span style="color: #c8232c;">Tres</span> Ases</strong> transformamos cada venta en una oportunidad para ti. Por cada boleta vendida con tu código de afiliado, ganas una comisión real del <strong>25% (¡200.000 COP!)</strong> de forma automática, segura y transparente.
+</p>
+
+
+  <p style="max-width: 900px; margin: 0 auto 20px auto; font-size: 1.2rem; text-align: center;">
+    No es solo una comisión. Es un sistema inteligente: te damos una landing page lista para vender, herramientas digitales para automatizar publicaciones y redes sociales, y una estructura profesional para garantizar que tu ingreso se registre y se pague al 100%.
+  </p>
+
+  <p style="max-width: 900px; margin: 0 auto 30px auto; font-size: 1.2rem; text-align: center;">
+    Todo con un sistema de identificación único para cada afiliado. Sin errores, sin confusiones. Comisiones del futuro, en el presente.
+  </p>
+
+  <div style="text-align: center; margin-bottom: 40px;">
+    <button style="background-color: #e60000; color: white; padding: 15px 35px; font-size: 1.2rem; border: none; border-radius: 10px; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.3); transition: transform 0.3s ease;">
+      💰 Maximiza Tus Ingresos Ahora
+    </button>
+  </div>
+
+  <p style="text-align: center; font-size: 1rem; color: #333;">
+    ¿Listo para generar ingresos desde ya? Automatizamos tus redes y presencia virtual para que vendas, además de brindarte un ecosistema de herramientas para mayor alcance. Tú compartes tu código, nosotros te ayudamos a ganar.
+</p>
+  </p>
+
+  <!-- Fondo animado con billetes flotando -->
+  <div class="fondo-billetes-verdes"></div>
+</section>
+
+<style>
+  .fondo-billetes-verdes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300%;
+    height: 100%;
+    background-image: url('https://media.giphy.com/media/3o7btMCltyDvSgF92E/giphy.gif'); /* billetes animados verdes */
+    background-size: cover;
+    background-repeat: repeat-x;
+    animation: moverBilletesVerdes 60s linear infinite;
+    opacity: 0.08;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  @keyframes moverBilletesVerdes {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-66%);
+    }
+  }
+
+  #sistema-referidos h2,
+  #sistema-referidos p,
+  #sistema-referidos button {
+    position: relative;
+    z-index: 1;
+  }
+
+  #sistema-referidos button:hover {
+    transform: scale(1.05);
+  }
+
+  @media screen and (max-width: 600px) {
+    #sistema-referidos h2 {
+      font-size: 2rem;
+    }
+
+    #sistema-referidos p {
+      font-size: 1rem;
+    }
+
+    #sistema-referidos button {
+      padding: 12px 24px;
+      font-size: 1rem;
+    }
+  }
+</style>
+
+<!-- Sección de Testimonios con fondo animado y tarjetas con animación de palpitación -->
+<section class="testimonials-section">
+  <div class="wrapper">
+    <h2 class="section-title">Ellos ya están ganando y apostando a la mejor compañía de rifas</h2>
+    <div class="testimonial-cards">
+      <div class="testimonial-card">
+        <div class="avatar">👤</div>
+        <h3>Ana M.</h3>
+        <p>"Convertí mi código en ingresos reales. La transparencia y la automatización son insuperables."</p>
+      </div>
+      <div class="testimonial-card">
+        <div class="avatar">👤</div>
+        <h3>Carlos R.</h3>
+        <p>"Nunca fue tan fácil vender rifas. Mi landing page y redes funcionan solas, ¡y las comisiones llegan!"</p>
+      </div>
+      <div class="testimonial-card">
+        <div class="avatar">👤</div>
+        <h3>Laura G.</h3>
+        <p>"El sistema de referidos me da confianza: pagos puntuales y una plataforma robusta para crecer cada día."</p>
+      </div>
+      <div class="testimonial-card">
+        <div class="avatar">👤</div>
+        <h3>Diego F.</h3>
+        <p>"Desde que me uní, mis ventas se duplicaron. El soporte y las herramientas digitales marcan la diferencia."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .testimonials-section {
+    position: relative;
+    background: #c8232c;
+    padding: 80px 20px;
+    color: #fff;
+    overflow: hidden;
+  }
+
+  /* Fondo animado con círculos flotantes */
+  .testimonials-section::before,
+  .testimonials-section::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(200,35,44,0.4) 0%, transparent 70%);
+    width: 200px; height: 200px;
+    top: 10%; left: 5%;
+    animation: float 8s ease-in-out infinite alternate;
+    z-index: 0;
+  }
+  .testimonials-section::after {
+    width: 300px; height: 300px;
+    top: 50%; left: 70%;
+    animation-duration: 12s;
+  }
+
+  @keyframes float {
+    to { transform: translateY(20px) translateX(20px); }
+  }
+
+  .wrapper {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    z-index: 1;
+    text-align: center;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #fff;
+  }
+
+  .testimonial-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  .testimonial-card {
+    background: #222;
+    border: 2px solid #fff;
+    border-radius: 12px;
+    padding: 30px 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    width: 250px;
+    text-align: center;
+    color: #fff;
+    animation: pulse 2s infinite;
+  }
+
+  /* Animación de palpitación en las tarjetas */
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  .avatar {
+    font-size: 3rem;
+    margin-bottom: 15px;
+  }
+
+  .testimonial-card h3 {
+    margin: 0 0 10px;
+    font-size: 1.4rem;
+    color: #fff;
+  }
+
+  .testimonial-card p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #ddd;
+  }
+
+  @media (max-width: 600px) {
+    .section-title { font-size: 2rem; }
+    .testimonial-card { padding: 20px 15px; width: 100%; }
+    .testimonial-card h3 { font-size: 1.2rem; }
+    .testimonial-card p { font-size: 0.95rem; }
+  }
+</style>
+
+<!-- Numeros -->
+
+<!-- Sección: Los resultados hablan por nosotros -->
+<section id="results-section" class="results-section">
+  <div class="background-symbols"></div>
+
+  <h2 class="results-title">Los resultados hablan por nosotros</h2>
+
+  <div class="stats-grid">
+    <div class="stat-item">
+      <div class="stat-value">
+        <span class="plus">+</span>
+        <span class="countup" data-target="25">0</span>
+      </div>
+      <div class="label">Años de experiencia</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">
+        <span class="plus">+</span>
+        <span class="countup" data-target="160">0</span>
+      </div>
+      <div class="label">Sorteos realizados</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">
+        <span class="plus">+</span>
+        <span class="countup" data-target="200000">0</span>
+      </div>
+      <div class="label">Boletas vendidas</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">
+        <span class="plus">+</span>
+        <span class="countup" data-target="160">0</span>
+      </div>
+      <div class="label">Premios entregados</div>
+    </div>
+  </div>
+
+  <div class="cta-wrapper">
+    <a href="https://wa.me/573216435009?text=Hola%20Los%20Tres%20Ases%2C%20quiero%20saber%20más" target="_blank" rel="noopener noreferrer" class="cta-button">Saber más</a>
+  </div>
+</section>
+
+<style>
+  /* Base */
+  #results-section {
+    position: relative;
+    background-color: #fff;
+    padding: 80px 20px;
+    overflow: hidden;
+  }
+  .results-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #c8232c;
+    margin-bottom: 50px;
+    z-index: 1;
+    position: relative;
+  }
+
+  /* Stats Grid */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+  .stat-item { text-align: center; }
+  .stat-value {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    font-size: 2.5rem;
+    color: #c8232c;
+  }
+  .plus {
+    font-size: 2.5rem;
+    margin-right: 5px;
+    color: #c8232c;
+    transition: transform 0.3s ease;
+  }
+  .countup {
+    display: inline-block;
+    transition: transform 0.3s ease;
+  }
+  .stat-item.pulse .plus,
+  .stat-item.pulse .countup {
+    animation: pulse 0.5s ease-in-out;
+  }
+  .label {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #333;
+  }
+
+  /* CTA */
+  .cta-wrapper { text-align: center; margin-top: 50px; z-index: 1; position: relative; }
+  .cta-button {
+    background-color: #c8232c;
+    color: #fff;
+    font-size: 1.1rem;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .cta-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+  }
+
+  /* Pulse animation */
+  @keyframes pulse {
+    0%   { transform: scale(1); }
+    50%  { transform: scale(1.2); }
+    100% { transform: scale(1); }
+  }
+
+  /* Background symbols */
+  .background-symbols {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 0;
+    pointer-events: none;
+  }
+  .background-symbols::before,
+  .background-symbols::after {
+    content: "🏅";
+    position: absolute;
+    font-size: 6rem;
+    opacity: 0.1;
+    animation: drift 15s ease-in-out infinite alternate;
+  }
+  .background-symbols::before {
+    top: 10%; left: 15%;
+  }
+  .background-symbols::after {
+    content: "💰";
+    top: 60%; left: 75%;
+    animation-duration: 20s;
+  }
+  @keyframes drift {
+    to { transform: translate(20px, -20px) rotate(360deg); }
+  }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    .stat-value { font-size: 2rem; }
+    .results-title { font-size: 2rem; }
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const section = document.getElementById('results-section');
+    const stats = section.querySelectorAll('.stat-item');
+    let started = false;
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !started) {
+          started = true;
+          stats.forEach(item => {
+            const counter = item.querySelector('.countup');
+            const plus = item.querySelector('.plus');
+            const target = +counter.getAttribute('data-target');
+            let count = 0;
+            const step = Math.ceil(target / 200);
+            const interval = setInterval(() => {
+              count += step;
+              if (count >= target) count = target;
+              counter.innerText = count.toLocaleString();
+              // pulse effect
+              item.classList.add('pulse');
+              setTimeout(() => item.classList.remove('pulse'), 500);
+
+              if (count === target) clearInterval(interval);
+            }, 20);
+          });
+          observer.disconnect();
+        }
+      });
+    }, { threshold: 0.5 });
+
+    observer.observe(section);
+  });
+</script>
+
+<!-- Footer -->
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+
+<footer class="footer-sec">
+  <div class="footer-bg-effect"></div>
+
+  <div class="footer-content">
+    <div class="footer-col">
+      <h4>Contáctanos</h4>
+      <p><strong>📞 Teléfono:</strong> <a href="tel:+573216435009">321 643 5009</a></p>
+      <p><strong>✉️ Correo:</strong> <a href="mailto:lostresases@tuta.io">lostresases@tuta.io</a></p>
+      <p><strong>📍 Dirección:</strong> Av. Santander #62-39, oficina 404B, Manizales</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Documentos Legales</h4>
+      <a href="Terminos-Politica/politica_de_privacidad.pdf" download class="footer-btn red">Política de privacidad</a>
+      <a href="Terminos-Politica/terminos_de_uso.pdf" download class="footer-btn red">Términos de uso</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Redes Sociales</h4>
+      <div class="footer-socials">
+        <a href="https://www.facebook.com/profile.php?id=100091352675333" class="footer-icon facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/lostresases_rifas/" class="footer-icon instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="footer-icon telegram"><i class="fab fa-telegram"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="footer-developed">
+      <a href="https://crisinnov.github.io" target="_blank" class="footer-crisinnov">
+        <span class="footer-cris-label">🖱️ Web desarrollada por</span>
+        <span class="footer-cris-name">CrisInnov</span>
+      </a>
+      <p class="footer-copy">© 2025 Los Tres Ases SAS. Todos los derechos reservados.</p>
+    </div>
+    <div class="footer-logos">
+      <img src="imga/coljuegosjpg" alt="Logo Coljuegos">
+      <img src="imga/edsa.jpeg" alt="Logo EDSA">
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer-sec {
+    background-color: #111111;
+    color: #ddd;
+    padding: 40px 20px 20px;
+    font-family: 'Segoe UI', sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .footer-bg-effect::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle at top left, rgba(0,255,0,0.04), transparent),
+                radial-gradient(circle at bottom right, rgba(0,255,0,0.04), transparent);
+    z-index: 0;
+  }
+
+  .footer-content {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 15px;
+    z-index: 1;
+    max-width: 1100px;
+    margin: auto;
+  }
+
+  .footer-col {
+    flex: 1 1 250px;
+    padding: 10px;
+  }
+
+  .footer-col h4 {
+    font-size: 1.05rem;
+    margin-bottom: 10px;
+    color: #fff;
+  }
+
+  .footer-col p, .footer-col a {
+    font-size: 0.95rem;
+    color: #ccc;
+    line-height: 1.6;
+    text-decoration: none;
+  }
+
+  .footer-col a:hover {
+    color: #fff;
+  }
+
+  .footer-btn {
+    border: none;
+    padding: 6px 12px;
+    margin-top: 5px;
+    margin-right: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.3s ease;
+  }
+
+  .footer-btn.red {
+    background-color: #e74c3c;
+    color: white;
+  }
+
+  .footer-btn.red:hover {
+    background-color: #c0392b;
+  }
+
+  .footer-socials {
+    display: flex;
+    gap: 12px;
+    margin-top: 10px;
+  }
+
+  .footer-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1.3rem;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+  }
+
+  .facebook { background-color: #3b5998; }
+  .instagram { background-color: #e1306c; }
+  .telegram { background-color: #0088cc; }
+
+  .footer-icon:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(255,255,255,0.2);
+  }
+
+  .footer-bottom {
+    border-top: 1px solid #222;
+    margin-top: 30px;
+    padding-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .footer-developed {
+    flex: 1 1 auto;
+    text-align: center;
+  }
+
+  .footer-crisinnov {
+    text-decoration: none;
+    font-size: 1.1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .footer-cris-label {
+    color: #ccc;
+  }
+
+  .footer-cris-name {
+    color: #00ff88;
+    font-weight: bold;
+    font-size: 1.3rem;
+    animation: glow-green 2s infinite alternate;
+  }
+
+  @keyframes glow-green {
+    from { text-shadow: 0 0 5px #00ff88; }
+    to { text-shadow: 0 0 15px #00ff88, 0 0 30px #00ff88; }
+  }
+
+  .footer-copy {
+    margin-top: 5px;
+    font-size: 0.85rem;
+    color: #888;
+  }
+
+  .footer-logos img {
+    height: 40px;
+    margin: 5px;
+  }
+
+  @media (max-width: 768px) {
+    .footer-content, .footer-bottom {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .footer-col {
+      flex: 1 1 100%;
+    }
+
+    .footer-logos img {
+      height: 35px;
+    }
+  }
+</style>
+
+
+  <!-- Whatsapp flotante -->
+
+  <!-- Botón flotante de WhatsApp personalizado estilo apuestas -->
+  <a href="https://wa.me/573216435009?text=Hola%20Los%20Tres%20Ases%2C%20quiero%20saber%20más?text=Hola%20Los%20Tres%20Ases%2C%20quiero%20saber%20más" class="whatsapp-float hidden"
+target="_blank" aria-label="Contáctanos por WhatsApp">
+  <div class="whatsapp-chip">
+    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp"
+      class="whatsapp-icon">
+  </div>
+</a>
+
+<style>
+  .whatsapp-float {
+    position: fixed;
+    bottom: 10px;
+    right: 30px; /* Posicionamiento a la izquierda de la pantalla */
+    z-index: 9999;
+    transition: transform 0.3s ease;
+  }
+
+  .whatsapp-chip {
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle at 30% 30%, #00c97d, #004e3b);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 20px rgba(0, 255, 170, 0.4), inset 0 0 8px #ffffff1a;
+    animation: shineRotate 4s linear infinite;
+    border: 3px solid #0f0;
+    position: relative;
+  }
+
+  .whatsapp-icon {
+    width: 40px;
+    height: 40px;
+    filter: brightness(0) invert(1);
+    transition: transform 0.3s ease;
+  }
+
+  .whatsapp-float:hover .whatsapp-icon {
+    transform: scale(1.15);
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  @keyframes shineRotate {
+    0% {
+      transform: rotate(0deg);
+      box-shadow: 0 0 12px rgba(0, 255, 170, 0.3);
+    }
+    50% {
+      box-shadow: 0 0 24px rgba(0, 255, 170, 0.6);
+    }
+    100% {
+      transform: rotate(360deg);
+      box-shadow: 0 0 12px rgba(0, 255, 170, 0.3);
+    }
+  }
+</style>
+
+<script>
+  // Mostrar el botón después de 4 segundos
+  setTimeout(() => {
+    document.querySelector('.whatsapp-float').classList.remove('hidden');
+  }, 4000);
+</script>
+
+  
+
+  
+</body>
+</html>
